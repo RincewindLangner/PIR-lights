@@ -5,19 +5,23 @@ int pirValue; // Place to store read PIR Value
 
 
 void setup() {
-  
+
   pinMode(ledPin, OUTPUT);
   pinMode(pirPin, INPUT);
- 
+  Serial.begin(9600);
   digitalWrite(ledPin, LOW);
-  
-  
-  
+
+
+
 }
 
 void loop() {
   pirValue = digitalRead(pirPin);
+  Serial.println(pirValue);
   digitalWrite(ledPin, pirValue);
+  Serial.println("motion");
+  Serial.println("motion2");
+
 
 }
 

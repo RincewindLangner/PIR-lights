@@ -23,10 +23,12 @@ void PIR_interrupt()
   MotionCount++;
   if ( analogRead( LDRpin ) < Thresh )
     digitalWrite ( LightPin, HIGH );
+  Serial.println("motion");
 }
 
 void setup()
 {
+  Serial.begin(9600);
   // Sets pin for the light control to an output and off.
   pinMode ( LightPin, OUTPUT );
   digitalWrite ( LightPin, LOW );
